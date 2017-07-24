@@ -8,20 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CreditsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func dismissModal(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 

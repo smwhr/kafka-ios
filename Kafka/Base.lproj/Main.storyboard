@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H7K-dl-OfU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoMono-Regular.ttf">
+            <string>RobotoMono-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kafka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +27,370 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSM-hJ-PLm">
+                                <rect key="frame" x="16" y="480" width="343" height="45"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="25"/>
+                                <state key="normal" title="[enter the maze]">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gAm-F0-KEi" kind="showDetail" action="showViewController:sender:" id="kQf-wo-Kxn"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="PhB-lC-vNb">
+                                <rect key="frame" x="83" y="123" width="101" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wall" translatesAutoresizingMaskIntoConstraints="NO" id="V9X-hN-Box">
+                                <rect key="frame" x="192" y="123" width="101" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exit" translatesAutoresizingMaskIntoConstraints="NO" id="YfM-zP-Tt5">
+                                <rect key="frame" x="83" y="260" width="101" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ennemy" translatesAutoresizingMaskIntoConstraints="NO" id="4GQ-3e-e0o">
+                                <rect key="frame" x="192" y="260" width="101" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cm-No-kg8">
+                                <rect key="frame" x="141.5" y="624" width="92" height="35"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
+                                <state key="normal" title="[credits]">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="26C-ki-2PT" kind="presentation" id="U44-rk-HaU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iSM-hJ-PLm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7bm-Fe-Pqp"/>
+                            <constraint firstItem="iSM-hJ-PLm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bpe-Kf-IF4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iSM-hJ-PLm" secondAttribute="bottom" constant="142" id="jqf-hK-iZO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2cm-No-kg8" secondAttribute="bottom" constant="8" id="xnw-Zx-4Uh"/>
+                            <constraint firstItem="2cm-No-kg8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zTB-oM-Lxk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5fe-3H-V6b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="895.20000000000005" y="138.98050974512745"/>
+        </scene>
+        <!--Kafka Controller-->
+        <scene sceneID="bva-qw-6ke">
+            <objects>
+                <viewController id="gAm-F0-KEi" customClass="KafkaController" customModule="Kafka" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eTf-dJ-hPX"/>
+                        <viewControllerLayoutGuide type="bottom" id="WtF-5w-YV0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VTp-Mo-lcn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="omA-xp-anQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLd-6J-smT" customClass="SKView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <color key="backgroundColor" red="0.14948474689999999" green="0.82184709820000001" blue="0.72110389549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SLd-6J-smT" secondAttribute="height" multiplier="1:1" id="1uZ-uH-tXc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUh-kM-6pR" userLabel="ButtonBar">
+                                        <rect key="frame" x="0.0" y="375" width="375" height="138"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgJ-XK-EkM">
+                                                <rect key="frame" x="91.5" y="37" width="64" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64" id="8wk-tn-6Y7"/>
+                                                    <constraint firstAttribute="height" constant="64" id="xvu-y8-wr8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="88" maxX="67" maxY="0.0"/>
+                                                <state key="normal" title="shuffle" image="relancer"/>
+                                                <connections>
+                                                    <action selector="renonceAction:" destination="gAm-F0-KEi" eventType="touchUpInside" id="hhz-xe-jkS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRt-P2-7TZ">
+                                                <rect key="frame" x="219.5" y="37" width="64" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64" id="1Ag-7X-JHH"/>
+                                                    <constraint firstAttribute="height" constant="64" id="Igg-2U-xqb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="88" maxX="67" maxY="0.0"/>
+                                                <state key="normal" title="destroy" image="detruire"/>
+                                                <connections>
+                                                    <action selector="destroyAction:" destination="gAm-F0-KEi" eventType="touchUpInside" id="DxY-bU-r4d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="138" id="KXW-mI-q5h"/>
+                                            <constraint firstItem="WgJ-XK-EkM" firstAttribute="centerX" secondItem="aUh-kM-6pR" secondAttribute="centerX" constant="-64" id="SR3-eC-PaQ"/>
+                                            <constraint firstItem="WgJ-XK-EkM" firstAttribute="centerY" secondItem="aUh-kM-6pR" secondAttribute="centerY" id="ST6-zI-poN"/>
+                                            <constraint firstItem="FRt-P2-7TZ" firstAttribute="centerY" secondItem="aUh-kM-6pR" secondAttribute="centerY" id="THq-YW-sId"/>
+                                            <constraint firstItem="FRt-P2-7TZ" firstAttribute="centerX" secondItem="aUh-kM-6pR" secondAttribute="centerX" constant="64" id="t2a-mH-mHL"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9T-Kv-Uk1" userLabel="Score">
+                                        <rect key="frame" x="0.0" y="513" width="375" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 pts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuX-Hw-y28">
+                                                <rect key="frame" x="130" y="9" width="115.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="24"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reach 1000pts and the exit to win" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD5-iZ-A5d">
+                                                <rect key="frame" x="58.5" y="41" width="257.5" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="13"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="xD5-iZ-A5d" firstAttribute="centerX" secondItem="i9T-Kv-Uk1" secondAttribute="centerX" id="GLk-mr-7Zy"/>
+                                            <constraint firstItem="xD5-iZ-A5d" firstAttribute="top" secondItem="JuX-Hw-y28" secondAttribute="bottom" id="IMp-sF-eii"/>
+                                            <constraint firstItem="JuX-Hw-y28" firstAttribute="centerY" secondItem="i9T-Kv-Uk1" secondAttribute="centerY" id="NV8-GB-LSV"/>
+                                            <constraint firstAttribute="height" constant="50" id="a8E-Pk-YrT"/>
+                                            <constraint firstItem="JuX-Hw-y28" firstAttribute="centerX" secondItem="i9T-Kv-Uk1" secondAttribute="centerX" id="m15-mZ-fpa"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pp-Gx-4Rq" userLabel="Quitter">
+                                        <rect key="frame" x="0.0" y="563" width="375" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-JA-Fai">
+                                                <rect key="frame" x="156.5" y="59" width="62" height="35"/>
+                                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
+                                                <state key="normal" title="[quit]">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startOver:" destination="gAm-F0-KEi" eventType="touchUpInside" id="ZWc-Ye-78Z"/>
+                                                    <segue destination="n49-R9-saB" kind="unwind" identifier="GameToHome" unwindAction="unwindToHomeWithSegue:" id="u2X-Ut-beh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="D0d-JA-Fai" secondAttribute="bottom" constant="10" id="98r-Dw-XuN"/>
+                                            <constraint firstItem="D0d-JA-Fai" firstAttribute="centerX" secondItem="4pp-Gx-4Rq" secondAttribute="centerX" id="RKn-mu-K35"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="i9T-Kv-Uk1" firstAttribute="top" secondItem="aUh-kM-6pR" secondAttribute="bottom" id="20V-fS-lWc"/>
+                                    <constraint firstAttribute="bottom" secondItem="4pp-Gx-4Rq" secondAttribute="bottom" id="630-vm-Rkb"/>
+                                    <constraint firstItem="aUh-kM-6pR" firstAttribute="top" secondItem="SLd-6J-smT" secondAttribute="bottom" id="uWs-d7-c1X"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="omA-xp-anQ" secondAttribute="trailing" id="PpL-Cq-m1H"/>
+                            <constraint firstItem="omA-xp-anQ" firstAttribute="leading" secondItem="VTp-Mo-lcn" secondAttribute="leading" id="Tbs-Y5-yxY"/>
+                            <constraint firstItem="WtF-5w-YV0" firstAttribute="top" secondItem="omA-xp-anQ" secondAttribute="bottom" id="fbd-q6-yc8"/>
+                            <constraint firstItem="omA-xp-anQ" firstAttribute="top" secondItem="VTp-Mo-lcn" secondAttribute="top" id="usj-PS-1Up"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardView" destination="SLd-6J-smT" id="ilP-hZ-wkw"/>
+                        <outlet property="destroyButton" destination="FRt-P2-7TZ" id="OFB-bU-qgq"/>
+                        <outlet property="renonceButton" destination="WgJ-XK-EkM" id="ITU-j3-5qp"/>
+                        <outlet property="scoreLabel" destination="JuX-Hw-y28" id="5zV-uX-tR6"/>
+                        <segue destination="Hvn-X1-n32" kind="showDetail" identifier="WinSegue" id="cRi-Vd-ak4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVW-H0-hqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="n49-R9-saB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8" y="138.98050974512745"/>
+        </scene>
+        <!--Credits Controller-->
+        <scene sceneID="bUf-TG-rHV">
+            <objects>
+                <viewController id="26C-ki-2PT" customClass="CreditsController" customModule="Kafka" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XLQ-2x-00D"/>
+                        <viewControllerLayoutGuide type="bottom" id="UXw-0v-7i6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qR6-Yu-iIR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy6-VV-SMg">
+                                <rect key="frame" x="320" y="28" width="31" height="35"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
+                                <state key="normal" title="[x]">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissModal:" destination="26C-ki-2PT" eventType="touchUpInside" id="ROD-Co-09C"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTr-yG-f5n">
+                                <rect key="frame" x="59" y="96" width="188" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="78V-Je-Eby">
+                                <rect key="frame" x="59" y="142" width="240" height="306"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Kafka ©2017 TroisYaourts
+
+Bomb icon by synonymsof.com
+
+Square Labyrinth by Alice Noir
+
+This game is based on BASIC code originally published in a magazine.
+See http://kafka.smwhr.net/ for more details about the origin story. 
+
+Contact : julien@troisyaourts.com</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fy6-VV-SMg" firstAttribute="top" secondItem="XLQ-2x-00D" secondAttribute="bottom" constant="8" id="IHe-As-A1n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fy6-VV-SMg" secondAttribute="trailing" constant="8" id="Uy1-Zi-r9K"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ye-ba-Vhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895.20000000000005" y="855.02248875562225"/>
+        </scene>
+        <!--Win Controller-->
+        <scene sceneID="ZoH-eC-ag2">
+            <objects>
+                <viewController id="Hvn-X1-n32" customClass="WinController" customModule="Kafka" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="63b-IF-eKh"/>
+                        <viewControllerLayoutGuide type="bottom" id="6al-dg-eQx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T0r-Fb-uaz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-lh-HZm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="congrats !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U5-ix-Rh3">
+                                        <rect key="frame" x="91.5" y="0.0" width="192.5" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="y0w-d7-J7e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exit" translatesAutoresizingMaskIntoConstraints="NO" id="NuX-q8-dtI">
+                                        <rect key="frame" x="151.5" y="100" width="72" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="88m-lS-wEf"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="oxV-rV-wOu"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="oxV-rV-wOu"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you're out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UC-Xb-5UG">
+                                        <rect key="frame" x="136.5" y="200" width="102.5" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="g1w-iM-qaM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 pts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gn-0b-9cs">
+                                        <rect key="frame" x="79.5" y="300" width="216.5" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="q7e-6l-d8D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="45"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCG-NL-U1F">
+                                        <rect key="frame" x="110.5" y="400" width="154" height="267"/>
+                                        <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
+                                        <state key="normal" title="[do it again ?]">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startOver:" destination="Hvn-X1-n32" eventType="touchUpInside" id="NUr-P6-5L5"/>
+                                            <segue destination="Upr-dI-o8W" kind="unwind" identifier="WinToHome" unwindAction="unwindToHomeWithSegue:" id="FAt-47-v0W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5gn-0b-9cs" firstAttribute="top" secondItem="6UC-Xb-5UG" secondAttribute="bottom" id="3ta-gC-ANo"/>
+                                    <constraint firstItem="NuX-q8-dtI" firstAttribute="top" secondItem="8U5-ix-Rh3" secondAttribute="bottom" id="ID9-U1-UqS"/>
+                                    <constraint firstAttribute="bottom" secondItem="zCG-NL-U1F" secondAttribute="bottom" id="u53-sS-ah4"/>
+                                    <constraint firstItem="6UC-Xb-5UG" firstAttribute="top" secondItem="NuX-q8-dtI" secondAttribute="bottom" id="y11-Nz-VIf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dpj-lh-HZm" firstAttribute="width" secondItem="T0r-Fb-uaz" secondAttribute="width" id="0Vn-Wv-JdU"/>
+                            <constraint firstItem="Dpj-lh-HZm" firstAttribute="centerX" secondItem="T0r-Fb-uaz" secondAttribute="centerX" id="FWD-yJ-WBb"/>
+                            <constraint firstItem="Dpj-lh-HZm" firstAttribute="centerY" secondItem="T0r-Fb-uaz" secondAttribute="centerY" id="Gqd-0b-hdT"/>
+                            <constraint firstItem="Dpj-lh-HZm" firstAttribute="height" secondItem="T0r-Fb-uaz" secondAttribute="height" id="Hgs-UO-iLZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="5gn-0b-9cs" id="z8e-wS-xPb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sz-bs-OFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Upr-dI-o8W" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2519.1999999999998" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9vQ-6d-NoY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="H7K-dl-OfU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VEl-ps-XVY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pUW-40-T10"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEu-O5-Efu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatar" width="72" height="120"/>
+        <image name="detruire" width="512" height="512"/>
+        <image name="ennemy" width="72" height="120"/>
+        <image name="exit" width="72" height="120"/>
+        <image name="relancer" width="512" height="512"/>
+        <image name="wall" width="72" height="120"/>
+    </resources>
 </document>

@@ -8,15 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WinController: UIViewController {
 
+    @IBOutlet weak var scoreLabel: UILabel!
+    public var score: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        scoreLabel.text = String(score) + " pts"
+    }
+
+    @IBAction func startOver(_ sender: UIButton) {
+        performSegue(withIdentifier: "WinToHome", sender: self)
     }
     
-    @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

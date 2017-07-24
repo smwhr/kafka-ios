@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BA5A1911F26829C00C5DA1E /* DemoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5A1901F26829C00C5DA1E /* DemoScene.swift */; };
+		8BA5A1931F2682B700C5DA1E /* KafkaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5A1921F2682B700C5DA1E /* KafkaScene.swift */; };
+		8BA5A1951F26883400C5DA1E /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5A1941F26883400C5DA1E /* RobotoMono-Regular.ttf */; };
+		8BA5A1971F2698F100C5DA1E /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5A1961F2698F100C5DA1E /* CreditsController.swift */; };
 		8BDA64791F252B55008BAB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64781F252B55008BAB6A /* AppDelegate.swift */; };
 		8BDA647B1F252B55008BAB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA647A1F252B55008BAB6A /* ViewController.swift */; };
 		8BDA647E1F252B55008BAB6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDA647C1F252B55008BAB6A /* Main.storyboard */; };
 		8BDA64801F252B55008BAB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDA647F1F252B55008BAB6A /* Assets.xcassets */; };
 		8BDA64831F252B55008BAB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDA64811F252B55008BAB6A /* LaunchScreen.storyboard */; };
+		8BDA648D1F252D4A008BAB6A /* Ennemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA648C1F252D4A008BAB6A /* Ennemy.swift */; };
+		8BDA648F1F252D58008BAB6A /* Teleport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA648E1F252D58008BAB6A /* Teleport.swift */; };
+		8BDA64931F252DA3008BAB6A /* KafkaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64921F252DA3008BAB6A /* KafkaController.swift */; };
+		8BDA64951F252DAE008BAB6A /* WinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64941F252DAE008BAB6A /* WinController.swift */; };
+		8BDA64971F253419008BAB6A /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64961F253419008BAB6A /* Array2D.swift */; };
+		8BDA649B1F253596008BAB6A /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA649A1F253596008BAB6A /* Wall.swift */; };
+		8BDA649D1F254585008BAB6A /* BoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA649C1F254585008BAB6A /* BoardScene.swift */; };
+		8BDA649F1F25573A008BAB6A /* MonospaceSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA649E1F25573A008BAB6A /* MonospaceSprite.swift */; };
+		8BDA64A11F255857008BAB6A /* Vector2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64A01F255857008BAB6A /* Vector2D.swift */; };
+		8BDA64A31F255CA6008BAB6A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64A21F255CA6008BAB6A /* Player.swift */; };
+		8BDA64A51F2560C2008BAB6A /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64A41F2560C2008BAB6A /* Empty.swift */; };
+		8BDA64A71F264B99008BAB6A /* Exit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64A61F264B99008BAB6A /* Exit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BA5A1901F26829C00C5DA1E /* DemoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScene.swift; sourceTree = "<group>"; };
+		8BA5A1921F2682B700C5DA1E /* KafkaScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KafkaScene.swift; sourceTree = "<group>"; };
+		8BA5A1941F26883400C5DA1E /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
+		8BA5A1961F2698F100C5DA1E /* CreditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		8BDA64751F252B55008BAB6A /* Kafka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kafka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDA64781F252B55008BAB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BDA647A1F252B55008BAB6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +42,18 @@
 		8BDA647F1F252B55008BAB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BDA64821F252B55008BAB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BDA64841F252B55008BAB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BDA648C1F252D4A008BAB6A /* Ennemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ennemy.swift; sourceTree = "<group>"; };
+		8BDA648E1F252D58008BAB6A /* Teleport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teleport.swift; sourceTree = "<group>"; };
+		8BDA64921F252DA3008BAB6A /* KafkaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KafkaController.swift; sourceTree = "<group>"; };
+		8BDA64941F252DAE008BAB6A /* WinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinController.swift; sourceTree = "<group>"; };
+		8BDA64961F253419008BAB6A /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		8BDA649A1F253596008BAB6A /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		8BDA649C1F254585008BAB6A /* BoardScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardScene.swift; sourceTree = "<group>"; };
+		8BDA649E1F25573A008BAB6A /* MonospaceSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonospaceSprite.swift; sourceTree = "<group>"; };
+		8BDA64A01F255857008BAB6A /* Vector2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2D.swift; sourceTree = "<group>"; };
+		8BDA64A21F255CA6008BAB6A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		8BDA64A41F2560C2008BAB6A /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		8BDA64A61F264B99008BAB6A /* Exit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +88,26 @@
 			children = (
 				8BDA64781F252B55008BAB6A /* AppDelegate.swift */,
 				8BDA647A1F252B55008BAB6A /* ViewController.swift */,
+				8BA5A1961F2698F100C5DA1E /* CreditsController.swift */,
+				8BDA64921F252DA3008BAB6A /* KafkaController.swift */,
+				8BDA64941F252DAE008BAB6A /* WinController.swift */,
 				8BDA647C1F252B55008BAB6A /* Main.storyboard */,
 				8BDA647F1F252B55008BAB6A /* Assets.xcassets */,
 				8BDA64811F252B55008BAB6A /* LaunchScreen.storyboard */,
 				8BDA64841F252B55008BAB6A /* Info.plist */,
+				8BDA649C1F254585008BAB6A /* BoardScene.swift */,
+				8BA5A1901F26829C00C5DA1E /* DemoScene.swift */,
+				8BA5A1921F2682B700C5DA1E /* KafkaScene.swift */,
+				8BDA64961F253419008BAB6A /* Array2D.swift */,
+				8BDA64A01F255857008BAB6A /* Vector2D.swift */,
+				8BDA648C1F252D4A008BAB6A /* Ennemy.swift */,
+				8BDA648E1F252D58008BAB6A /* Teleport.swift */,
+				8BDA64A21F255CA6008BAB6A /* Player.swift */,
+				8BDA649A1F253596008BAB6A /* Wall.swift */,
+				8BDA64A41F2560C2008BAB6A /* Empty.swift */,
+				8BDA64A61F264B99008BAB6A /* Exit.swift */,
+				8BDA649E1F25573A008BAB6A /* MonospaceSprite.swift */,
+				8BA5A1941F26883400C5DA1E /* RobotoMono-Regular.ttf */,
 			);
 			path = Kafka;
 			sourceTree = "<group>";
@@ -127,6 +175,7 @@
 				8BDA64831F252B55008BAB6A /* LaunchScreen.storyboard in Resources */,
 				8BDA64801F252B55008BAB6A /* Assets.xcassets in Resources */,
 				8BDA647E1F252B55008BAB6A /* Main.storyboard in Resources */,
+				8BA5A1951F26883400C5DA1E /* RobotoMono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +186,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDA64951F252DAE008BAB6A /* WinController.swift in Sources */,
+				8BDA64971F253419008BAB6A /* Array2D.swift in Sources */,
 				8BDA647B1F252B55008BAB6A /* ViewController.swift in Sources */,
+				8BDA649B1F253596008BAB6A /* Wall.swift in Sources */,
+				8BDA64A31F255CA6008BAB6A /* Player.swift in Sources */,
+				8BDA64A51F2560C2008BAB6A /* Empty.swift in Sources */,
+				8BDA649F1F25573A008BAB6A /* MonospaceSprite.swift in Sources */,
+				8BA5A1931F2682B700C5DA1E /* KafkaScene.swift in Sources */,
+				8BDA64A11F255857008BAB6A /* Vector2D.swift in Sources */,
 				8BDA64791F252B55008BAB6A /* AppDelegate.swift in Sources */,
+				8BDA64A71F264B99008BAB6A /* Exit.swift in Sources */,
+				8BDA648F1F252D58008BAB6A /* Teleport.swift in Sources */,
+				8BDA648D1F252D4A008BAB6A /* Ennemy.swift in Sources */,
+				8BA5A1971F2698F100C5DA1E /* CreditsController.swift in Sources */,
+				8BDA64931F252DA3008BAB6A /* KafkaController.swift in Sources */,
+				8BDA649D1F254585008BAB6A /* BoardScene.swift in Sources */,
+				8BA5A1911F26829C00C5DA1E /* DemoScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +328,7 @@
 				DEVELOPMENT_TEAM = NZGWYX756E;
 				INFOPLIST_FILE = Kafka/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.troisyaourts.Kafka;
+				PRODUCT_BUNDLE_IDENTIFIER = com.troisyaourts.kafka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -277,7 +341,7 @@
 				DEVELOPMENT_TEAM = NZGWYX756E;
 				INFOPLIST_FILE = Kafka/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.troisyaourts.Kafka;
+				PRODUCT_BUNDLE_IDENTIFIER = com.troisyaourts.kafka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,6 +366,7 @@
 				8BDA64891F252B55008BAB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
