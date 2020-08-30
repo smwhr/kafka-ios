@@ -15,6 +15,7 @@ class KafkaController: UIViewController {
     @IBOutlet weak var renonceButton: UIButton?
     @IBOutlet weak var destroyButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var swipeInstruction: UIView!
     
     private var scene : BoardScene!
     
@@ -28,48 +29,60 @@ class KafkaController: UIViewController {
         self.boardView.showsNodeCount = false
         self.boardView.ignoresSiblingOrder = false
         scene.scaleMode = .resizeFill
-        self.boardView.presentScene(scene)
         
         // ui
         scoreLabel.text = "0" + " pts"
         
         // swipe gesture detector
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
         self.view.addGestureRecognizer(swipeUp)
         
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
         self.view.addGestureRecognizer(swipeDown)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
         
         // win event
         NotificationCenter.default.addObserver(self, selector: #selector(respondToWinEvent(notification:)), name: Notification.Name("win"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(respondToScoreChangeEvent(notification:)), name: Notification.Name("score_change"), object: nil)
     }
+    
+    override func viewDidLayoutSubviews() {
+        self.boardView.presentScene(scene)
+    }
 
-    func respondToSwipeGesture(gesture: UIGestureRecognizer){
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer){
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             var hasMoved: Bool = false
             
+            if !swipeInstruction.isHidden {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.swipeInstruction.alpha = 0
+                }, completion:{ (_) in
+                    self.swipeInstruction.isHidden = true;
+                })
+            }
+            
+            
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
-                hasMoved = scene.movePlayer(direction: .right)
-            case UISwipeGestureRecognizerDirection.down:
-                hasMoved = scene.movePlayer(direction: .down)
-            case UISwipeGestureRecognizerDirection.left:
-                hasMoved = scene.movePlayer(direction: .left)
-            case UISwipeGestureRecognizerDirection.up:
-                hasMoved = scene.movePlayer(direction: .up)
-            default:
-                break
+                case UISwipeGestureRecognizer.Direction.right:
+                    hasMoved = scene.movePlayer(direction: .right)
+                case UISwipeGestureRecognizer.Direction.down:
+                    hasMoved = scene.movePlayer(direction: .down)
+                case UISwipeGestureRecognizer.Direction.left:
+                    hasMoved = scene.movePlayer(direction: .left)
+                case UISwipeGestureRecognizer.Direction.up:
+                    hasMoved = scene.movePlayer(direction: .up)
+                default:
+                    break
             }
             
             if(hasMoved){
@@ -91,11 +104,11 @@ class KafkaController: UIViewController {
     }
     
     
-    func respondToWinEvent(notification: Notification){
+    @objc func respondToWinEvent(notification: Notification){
         performSegue(withIdentifier: "WinSegue", sender: notification.object)
     }
     
-    func respondToScoreChangeEvent(notification: Notification){
+    @objc func respondToScoreChangeEvent(notification: Notification){
         scoreLabel.text = String(describing: notification.object as! Int) + " pts"
     }
     
@@ -103,7 +116,7 @@ class KafkaController: UIViewController {
         if segue.identifier == "WinSegue"
         {
             if let destinationVC = segue.destination as? WinController {
-                destinationVC.score = sender as! Int
+                destinationVC.score = (sender as! Int)
             }
         }
     }

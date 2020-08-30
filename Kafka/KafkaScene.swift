@@ -18,7 +18,7 @@ enum PlayerDirection: String, CustomStringConvertible {
 }
 
 func random() -> CGFloat {
-    return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+    return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
 }
 
 func randomRange(min: CGFloat, max: CGFloat) -> CGFloat {

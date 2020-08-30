@@ -21,32 +21,40 @@ class BoardScene: KafkaScene{
     // score
     private var currentScore: Int = 0
     private var score: Int = 0
+    private var level: Int = 1
+    private var maxPerLevel: Int = 150
     private let scoreToWin: Int = 1000
+    
+    private var oldSize:CGSize = CGSize(width: 0, height: 0)
     
     // internals
     var initialPlayerPosition:Vector2D<Int> = Vector2D<Int>(x: 1,y: 9)
     var exitPosition:Vector2D<Int> = Vector2D<Int>(x: 32,y: 9)
     
-    override func didMove(to view: SKView) {
-        
-        backgroundColor = SKColor.green
-        
-        player = Player(containerSize: size)
+    override func sceneDidLoad() {
         score = 0
-        
-        initBoard()
-        
+    }
+    
+    override func didMove(to view: SKView) {
+    
+        if(size != oldSize){
+            print("size changed from ", oldSize, " to ", size)
+            player = Player(containerSize: size)
+            initBoard()
+            oldSize = size
+        }
     }
     
     override func initBoard(){
         randomInitBoard()
+        NotificationCenter.default.post(name: Notification.Name("score_change"), object: score + currentScore)
     }
     
     func randomInitBoard(){
         removeAllChildren()
         
         addChild(player)
-        currentScore = 0
+        currentScore = 0 //maxPerLevel * level
         
         player.move(to: initialPlayerPosition)
         labyrinth = createNewLabyrinth()
@@ -114,12 +122,12 @@ class BoardScene: KafkaScene{
     
     func createEnnemies() -> Array<MonospaceSprite>{
         var ennemies = Array<MonospaceSprite>()
-        for _ in 0...14{
+        for _ in 0...(13+level){
             let ennemy = Ennemy(containerSize:size);
             var tx = 0
             var ty = 0
             repeat{
-                tx = Int(randomRange(min: 25, max: 31));
+                tx = Int(randomRange(min: CGFloat(26 - level), max: 31));
                 ty = Int(randomRange(min: 1, max: 18));
             }while(!(labyrinth[tx,ty]?.traversable)!)
             
@@ -178,16 +186,18 @@ class BoardScene: KafkaScene{
         }
         if canMove(to: futurePosition){
             player.move(to: futurePosition)
-            currentScore += 1
+            currentScore = min(currentScore + 1, level * maxPerLevel)
+            NotificationCenter.default.post(name: Notification.Name("score_change"), object: score + currentScore)
             return true
         }
         return false
     }
     
     func renonce(){
+        score = max(score - 100, 0)
+        level = max(1, level - 1)
         randomInitBoard()
-        score = max(score - 100 + currentScore, 0)
-        NotificationCenter.default.post(name: Notification.Name("score_change"), object: score)
+        NotificationCenter.default.post(name: Notification.Name("score_change"), object: score + currentScore)
     }
     
     func destroy(){
@@ -203,8 +213,8 @@ class BoardScene: KafkaScene{
                 }
             }
         }
-        score = max(score - currentScore, 0)
-        NotificationCenter.default.post(name: Notification.Name("score_change"), object: score)
+        currentScore = currentScore / 2
+        NotificationCenter.default.post(name: Notification.Name("score_change"), object: score + currentScore)
     }
     
     func moveEnnemies(){
@@ -243,8 +253,9 @@ class BoardScene: KafkaScene{
     }
     
     func exitLevel(){
+        level += 1
         score += 2*currentScore
-        NotificationCenter.default.post(name: Notification.Name("score_change"), object: score)
+        
         
         if(score >= scoreToWin){
             NotificationCenter.default.post(name: Notification.Name("win"), object: score)
@@ -252,6 +263,7 @@ class BoardScene: KafkaScene{
         }else{
             randomInitBoard()
         }
+        NotificationCenter.default.post(name: Notification.Name("score_change"), object: score + currentScore)
         
     }
 }
