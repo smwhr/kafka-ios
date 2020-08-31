@@ -21,7 +21,7 @@ class MonospaceSprite:SKSpriteNode{
         spsize = CGSize(width:containerSize.width/33, height: containerSize.height/19)
         
         let texture = SKTexture(imageNamed: imageNamed)
-        super.init(texture: texture, color: UIColor.clear, size: spsize)
+        super.init(texture: texture, color: UIColor.blue, size: spsize)
     }
     
     func move(to position:Vector2D<Int>){

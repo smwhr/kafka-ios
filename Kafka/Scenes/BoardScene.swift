@@ -256,6 +256,7 @@ class BoardScene: KafkaScene{
         level += 1
         score += 2*currentScore
         
+        GameCenterHelper.helper.report(achievement: "first_exit", percent: 100.0);
         
         if(score >= scoreToWin){
             NotificationCenter.default.post(name: Notification.Name("win"), object: score)

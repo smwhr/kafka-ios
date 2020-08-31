@@ -242,11 +242,11 @@
                         <viewControllerLayoutGuide type="bottom" id="UXw-0v-7i6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qR6-Yu-iIR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy6-VV-SMg">
-                                <rect key="frame" x="265" y="28" width="31" height="35"/>
+                                <rect key="frame" x="265" y="8" width="31" height="35"/>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
                                 <state key="normal" title="[x]">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,13 +256,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTr-yG-f5n">
-                                <rect key="frame" x="25" y="96" width="270" height="47"/>
+                                <rect key="frame" x="25" y="76" width="270" height="47"/>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="78V-Je-Eby">
-                                <rect key="frame" x="25" y="142" width="270" height="306"/>
+                                <rect key="frame" x="25" y="122" width="270" height="306"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Kafka ©2017 TroisYaourts
 
@@ -306,14 +306,14 @@ Contact : julien@troisyaourts.com</string>
                         <viewControllerLayoutGuide type="bottom" id="6al-dg-eQx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="T0r-Fb-uaz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-lh-HZm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="congrats !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U5-ix-Rh3">
-                                        <rect key="frame" x="64" y="0.0" width="192.5" height="100"/>
+                                        <rect key="frame" x="88.5" y="0.0" width="143" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="y0w-d7-J7e"/>
                                         </constraints>
@@ -334,7 +334,7 @@ Contact : julien@troisyaourts.com</string>
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you're out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UC-Xb-5UG">
-                                        <rect key="frame" x="109" y="200" width="102.5" height="100"/>
+                                        <rect key="frame" x="122" y="200" width="76.5" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="g1w-iM-qaM"/>
                                         </constraints>
@@ -343,7 +343,7 @@ Contact : julien@troisyaourts.com</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 pts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gn-0b-9cs">
-                                        <rect key="frame" x="52" y="300" width="216.5" height="100"/>
+                                        <rect key="frame" x="72" y="300" width="176" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="q7e-6l-d8D"/>
                                         </constraints>
@@ -352,7 +352,7 @@ Contact : julien@troisyaourts.com</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCG-NL-U1F">
-                                        <rect key="frame" x="83" y="400" width="154" height="60"/>
+                                        <rect key="frame" x="108.5" y="400" width="103" height="60"/>
                                         <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="17"/>
                                         <state key="normal" title="[do it again ?]">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B314FEB24FD2C8E00C59B8E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B314FEA24FD2C8E00C59B8E /* GameKit.framework */; };
+		8B314FF624FD3D9200C59B8E /* GameCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B314FF524FD3D9200C59B8E /* GameCenterHelper.swift */; };
 		8BA5A1911F26829C00C5DA1E /* DemoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5A1901F26829C00C5DA1E /* DemoScene.swift */; };
 		8BA5A1931F2682B700C5DA1E /* KafkaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5A1921F2682B700C5DA1E /* KafkaScene.swift */; };
 		8BA5A1951F26883400C5DA1E /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5A1941F26883400C5DA1E /* RobotoMono-Regular.ttf */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B314FEA24FD2C8E00C59B8E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		8B314FF524FD3D9200C59B8E /* GameCenterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterHelper.swift; sourceTree = "<group>"; };
 		8BA5A1901F26829C00C5DA1E /* DemoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScene.swift; sourceTree = "<group>"; };
 		8BA5A1921F2682B700C5DA1E /* KafkaScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KafkaScene.swift; sourceTree = "<group>"; };
 		8BA5A1941F26883400C5DA1E /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
@@ -61,17 +65,99 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B314FEB24FD2C8E00C59B8E /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B314FE924FD2C8E00C59B8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B314FEA24FD2C8E00C59B8E /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B314FEE24FD3C9700C59B8E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B314FF524FD3D9200C59B8E /* GameCenterHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8B314FEF24FD3CC700C59B8E /* Maths */ = {
+			isa = PBXGroup;
+			children = (
+				8BDA64961F253419008BAB6A /* Array2D.swift */,
+				8BDA64A01F255857008BAB6A /* Vector2D.swift */,
+			);
+			path = Maths;
+			sourceTree = "<group>";
+		};
+		8B314FF024FD3CE100C59B8E /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				8BDA648C1F252D4A008BAB6A /* Ennemy.swift */,
+				8BDA648E1F252D58008BAB6A /* Teleport.swift */,
+				8BDA64A21F255CA6008BAB6A /* Player.swift */,
+				8BDA649A1F253596008BAB6A /* Wall.swift */,
+				8BDA64A41F2560C2008BAB6A /* Empty.swift */,
+				8BDA64A61F264B99008BAB6A /* Exit.swift */,
+				8BDA649E1F25573A008BAB6A /* MonospaceSprite.swift */,
+			);
+			path = Sprites;
+			sourceTree = "<group>";
+		};
+		8B314FF124FD3CF100C59B8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BA5A1941F26883400C5DA1E /* RobotoMono-Regular.ttf */,
+				8BDA64841F252B55008BAB6A /* Info.plist */,
+				8BDA647F1F252B55008BAB6A /* Assets.xcassets */,
+				8BDA64781F252B55008BAB6A /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B314FF224FD3D0100C59B8E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8BDA647A1F252B55008BAB6A /* ViewController.swift */,
+				8BA5A1961F2698F100C5DA1E /* CreditsController.swift */,
+				8BDA64921F252DA3008BAB6A /* KafkaController.swift */,
+				8BDA64941F252DAE008BAB6A /* WinController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B314FF324FD3D1600C59B8E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8BDA647C1F252B55008BAB6A /* Main.storyboard */,
+				8BDA64811F252B55008BAB6A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8B314FF424FD3D5A00C59B8E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8BDA649C1F254585008BAB6A /* BoardScene.swift */,
+				8BA5A1901F26829C00C5DA1E /* DemoScene.swift */,
+				8BA5A1921F2682B700C5DA1E /* KafkaScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		8BDA646C1F252B55008BAB6A = {
 			isa = PBXGroup;
 			children = (
 				8BDA64771F252B55008BAB6A /* Kafka */,
 				8BDA64761F252B55008BAB6A /* Products */,
+				8B314FE924FD2C8E00C59B8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,28 +172,13 @@
 		8BDA64771F252B55008BAB6A /* Kafka */ = {
 			isa = PBXGroup;
 			children = (
-				8BDA64781F252B55008BAB6A /* AppDelegate.swift */,
-				8BDA647A1F252B55008BAB6A /* ViewController.swift */,
-				8BA5A1961F2698F100C5DA1E /* CreditsController.swift */,
-				8BDA64921F252DA3008BAB6A /* KafkaController.swift */,
-				8BDA64941F252DAE008BAB6A /* WinController.swift */,
-				8BDA647C1F252B55008BAB6A /* Main.storyboard */,
-				8BDA647F1F252B55008BAB6A /* Assets.xcassets */,
-				8BDA64811F252B55008BAB6A /* LaunchScreen.storyboard */,
-				8BDA64841F252B55008BAB6A /* Info.plist */,
-				8BDA649C1F254585008BAB6A /* BoardScene.swift */,
-				8BA5A1901F26829C00C5DA1E /* DemoScene.swift */,
-				8BA5A1921F2682B700C5DA1E /* KafkaScene.swift */,
-				8BDA64961F253419008BAB6A /* Array2D.swift */,
-				8BDA64A01F255857008BAB6A /* Vector2D.swift */,
-				8BDA648C1F252D4A008BAB6A /* Ennemy.swift */,
-				8BDA648E1F252D58008BAB6A /* Teleport.swift */,
-				8BDA64A21F255CA6008BAB6A /* Player.swift */,
-				8BDA649A1F253596008BAB6A /* Wall.swift */,
-				8BDA64A41F2560C2008BAB6A /* Empty.swift */,
-				8BDA64A61F264B99008BAB6A /* Exit.swift */,
-				8BDA649E1F25573A008BAB6A /* MonospaceSprite.swift */,
-				8BA5A1941F26883400C5DA1E /* RobotoMono-Regular.ttf */,
+				8B314FEE24FD3C9700C59B8E /* Helpers */,
+				8B314FF124FD3CF100C59B8E /* Supporting Files */,
+				8B314FF224FD3D0100C59B8E /* Controllers */,
+				8B314FF324FD3D1600C59B8E /* Storyboards */,
+				8B314FF424FD3D5A00C59B8E /* Scenes */,
+				8B314FEF24FD3CC700C59B8E /* Maths */,
+				8B314FF024FD3CE100C59B8E /* Sprites */,
 			);
 			path = Kafka;
 			sourceTree = "<group>";
@@ -198,6 +269,7 @@
 				8BDA64791F252B55008BAB6A /* AppDelegate.swift in Sources */,
 				8BDA64A71F264B99008BAB6A /* Exit.swift in Sources */,
 				8BDA648F1F252D58008BAB6A /* Teleport.swift in Sources */,
+				8B314FF624FD3D9200C59B8E /* GameCenterHelper.swift in Sources */,
 				8BDA648D1F252D4A008BAB6A /* Ennemy.swift in Sources */,
 				8BA5A1971F2698F100C5DA1E /* CreditsController.swift in Sources */,
 				8BDA64931F252DA3008BAB6A /* KafkaController.swift in Sources */,
@@ -351,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020.08.29.1258;
 				DEVELOPMENT_TEAM = NZGWYX756E;
-				INFOPLIST_FILE = Kafka/Info.plist;
+				INFOPLIST_FILE = "Kafka/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.5;
@@ -370,7 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020.08.29.1258;
 				DEVELOPMENT_TEAM = NZGWYX756E;
-				INFOPLIST_FILE = Kafka/Info.plist;
+				INFOPLIST_FILE = "Kafka/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.5;

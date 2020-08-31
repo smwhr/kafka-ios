@@ -53,6 +53,9 @@ class KafkaController: UIViewController {
         // win event
         NotificationCenter.default.addObserver(self, selector: #selector(respondToWinEvent(notification:)), name: Notification.Name("win"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(respondToScoreChangeEvent(notification:)), name: Notification.Name("score_change"), object: nil)
+        
+        //GameCenter
+        GameCenterHelper.helper.viewController = self
     }
     
     override func viewDidLayoutSubviews() {
