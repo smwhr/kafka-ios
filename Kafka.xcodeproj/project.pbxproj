@@ -30,6 +30,7 @@
 		8BDA64A31F255CA6008BAB6A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64A21F255CA6008BAB6A /* Player.swift */; };
 		8BDA64A51F2560C2008BAB6A /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64A41F2560C2008BAB6A /* Empty.swift */; };
 		8BDA64A71F264B99008BAB6A /* Exit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA64A61F264B99008BAB6A /* Exit.swift */; };
+		E722E3EB24FD836B00A27146 /* SHKScanlines.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E722E3EA24FD836B00A27146 /* SHKScanlines.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		8BDA64A21F255CA6008BAB6A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		8BDA64A41F2560C2008BAB6A /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		8BDA64A61F264B99008BAB6A /* Exit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exit.swift; sourceTree = "<group>"; };
+		E722E3EA24FD836B00A27146 /* SHKScanlines.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SHKScanlines.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		8BDA64771F252B55008BAB6A /* Kafka */ = {
 			isa = PBXGroup;
 			children = (
+				E722E3E924FD832500A27146 /* Shaders */,
 				8B314FEE24FD3C9700C59B8E /* Helpers */,
 				8B314FF124FD3CF100C59B8E /* Supporting Files */,
 				8B314FF224FD3D0100C59B8E /* Controllers */,
@@ -181,6 +184,14 @@
 				8B314FF024FD3CE100C59B8E /* Sprites */,
 			);
 			path = Kafka;
+			sourceTree = "<group>";
+		};
+		E722E3E924FD832500A27146 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				E722E3EA24FD836B00A27146 /* SHKScanlines.fsh */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 			files = (
 				8BDA64831F252B55008BAB6A /* LaunchScreen.storyboard in Resources */,
 				8BDA64801F252B55008BAB6A /* Assets.xcassets in Resources */,
+				E722E3EB24FD836B00A27146 /* SHKScanlines.fsh in Resources */,
 				8BDA647E1F252B55008BAB6A /* Main.storyboard in Resources */,
 				8BA5A1951F26883400C5DA1E /* RobotoMono-Regular.ttf in Resources */,
 			);

@@ -54,6 +54,18 @@ class KafkaController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(respondToWinEvent(notification:)), name: Notification.Name("win"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(respondToScoreChangeEvent(notification:)), name: Notification.Name("score_change"), object: nil)
         
+//        // retro effect
+//        let scanlinesShader = SKShader(fileNamed: "SHKScanlines.fsh")
+//        
+//        scanlinesShader.uniforms = [
+//            SKUniform(name: "u_width", float: 4.0),
+//            SKUniform(name: "u_brightness", float: 0.75)
+//        ]
+//        scanlinesShader.attributes = [
+//            SKAttribute(name: "a_size", type: .vectorFloat2)
+//        ]
+//        scene.shader = scanlinesShader
+        
         //GameCenter
         GameCenterHelper.helper.viewController = self
     }

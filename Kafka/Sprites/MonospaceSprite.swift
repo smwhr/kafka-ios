@@ -21,7 +21,20 @@ class MonospaceSprite:SKSpriteNode{
         spsize = CGSize(width:containerSize.width/33, height: containerSize.height/19)
         
         let texture = SKTexture(imageNamed: imageNamed)
-        super.init(texture: texture, color: UIColor.blue, size: spsize)
+        super.init(texture: texture, color: UIColor.clear, size: spsize)
+        self.color  = UIColor(red: 1.0, green: 176.0/255.0, blue: 0.0, alpha: 1.0)
+        self.colorBlendFactor = 0.8
+        // retro effect
+//        let scanlinesShader = SKShader(fileNamed: "SHKScanlines.fsh")
+//        
+//        scanlinesShader.uniforms = [
+//            SKUniform(name: "u_width", float: 1.0),
+//            SKUniform(name: "u_brightness", float: 0.75)
+//        ]
+//        scanlinesShader.attributes = [
+//            SKAttribute(name: "a_size", type: .vectorFloat2)
+//        ]
+//        self.shader = scanlinesShader
     }
     
     func move(to position:Vector2D<Int>){

@@ -24,6 +24,7 @@ class BoardScene: KafkaScene{
     private var level: Int = 1
     private var maxPerLevel: Int = 150
     private let scoreToWin: Int = 1000
+    private let initialEnnemies = 13
     
     private var oldSize:CGSize = CGSize(width: 0, height: 0)
     
@@ -122,12 +123,12 @@ class BoardScene: KafkaScene{
     
     func createEnnemies() -> Array<MonospaceSprite>{
         var ennemies = Array<MonospaceSprite>()
-        for _ in 0...(13+level){
+        for _ in 0...(initialEnnemies+level){
             let ennemy = Ennemy(containerSize:size);
             var tx = 0
             var ty = 0
             repeat{
-                tx = Int(randomRange(min: CGFloat(26 - level), max: 31));
+                tx = Int(randomRange(min: CGFloat(max(1, 26 - level)), max: 31));
                 ty = Int(randomRange(min: 1, max: 18));
             }while(!(labyrinth[tx,ty]?.traversable)!)
             
